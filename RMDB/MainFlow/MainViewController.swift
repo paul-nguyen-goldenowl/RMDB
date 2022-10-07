@@ -104,6 +104,16 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
 
         let movie = viewModel.movies[indexPath.row]
         cell.bindView(with: movie)
+        
+        cell.didTapLikeAction = {
+            self.viewModel.movies[indexPath.row].isLike = !self.viewModel.movies[indexPath.row].isLike
+            cell.updateLikeState(isLike: self.viewModel.movies[indexPath.row].isLike)
+            if SharedData.shared.likedVideos.contains(movie.movie.id) {
+                SharedData.shared.likedVideos.remove(movie.movie.id)
+            } else {
+                SharedData.shared.likedVideos.insert(movie.movie.id)
+            }
+        }
         return cell
     }
     
@@ -112,6 +122,6 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        viewModel.navigateWithMovie(self, movie: viewModel.movies[indexPath.row])
+        viewModel.navigateWithMovie(self, movie: viewModel.movies[indexPath.row].movie)
     }
 }

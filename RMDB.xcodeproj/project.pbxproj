@@ -28,6 +28,7 @@
 		085FA11828EFC2F000676F7E /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085FA11728EFC2F000676F7E /* DetailViewModel.swift */; };
 		085FA11A28EFD83700676F7E /* Charactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085FA11928EFD83700676F7E /* Charactor.swift */; };
 		085FA11C28EFECEA00676F7E /* BaseUITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085FA11B28EFECEA00676F7E /* BaseUITableViewCell.swift */; };
+		085FA11E28F0088800676F7E /* SharedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085FA11D28F0088800676F7E /* SharedData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		085FA11728EFC2F000676F7E /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		085FA11928EFD83700676F7E /* Charactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Charactor.swift; sourceTree = "<group>"; };
 		085FA11B28EFECEA00676F7E /* BaseUITableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUITableViewCell.swift; sourceTree = "<group>"; };
+		085FA11D28F0088800676F7E /* SharedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,7 +72,6 @@
 		085FA0C828EEBB5300676F7E = {
 			isa = PBXGroup;
 			children = (
-				085FA10728EEEBD700676F7E /* Extensions.swift */,
 				085FA0D328EEBB5400676F7E /* RMDB */,
 				085FA0D228EEBB5400676F7E /* Products */,
 				085FA10928EF4AC300676F7E /* Frameworks */,
@@ -88,6 +89,7 @@
 		085FA0D328EEBB5400676F7E /* RMDB */ = {
 			isa = PBXGroup;
 			children = (
+				085FA10728EEEBD700676F7E /* Extensions.swift */,
 				085FA10428EED0DF00676F7E /* Base */,
 				085FA0FF28EECC6D00676F7E /* View */,
 				085FA0FC28EEC63900676F7E /* ViewModels */,
@@ -126,6 +128,7 @@
 				085FA0D628EEBB5400676F7E /* SceneDelegate.swift */,
 				085FA0DD28EEBB5500676F7E /* Assets.xcassets */,
 				085FA0DF28EEBB5500676F7E /* LaunchScreen.storyboard */,
+				085FA11D28F0088800676F7E /* SharedData.swift */,
 			);
 			path = Share;
 			sourceTree = "<group>";
@@ -252,6 +255,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				085FA11E28F0088800676F7E /* SharedData.swift in Sources */,
 				085FA11428EFC1D200676F7E /* DetailViewController.swift in Sources */,
 				085FA11A28EFD83700676F7E /* Charactor.swift in Sources */,
 				085FA0F928EEBE9200676F7E /* NetworkManager.swift in Sources */,

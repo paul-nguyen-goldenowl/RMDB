@@ -8,7 +8,7 @@
 import UIKit
 
 class MainViewModel {
-    var movies: [Movie]
+    var movies: [MovieWithLike]
     var error: NetworkError?
 
     init() {
@@ -22,7 +22,9 @@ class MainViewModel {
                 guard let self = self else { return }
                 switch result {
                 case let .success(result):
-                    self.movies = result
+                    self.movies = result.map { movie in
+                        MovieWithLike(movie: movie, isLike: false)
+                    }
                     completion(.success(result))
                 case let .failure(error):
                     self.error = error
@@ -32,7 +34,7 @@ class MainViewModel {
         })
     }
 
-    func navigateWithMovie(_ vc: UIViewController, movie: Movie){
+    func navigateWithMovie(_ vc: UIViewController, movie: Movie) {
         let viewController = DetailViewController()
         let detailViewModel = viewController.viewModel
         detailViewModel.movie = movie
