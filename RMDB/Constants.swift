@@ -9,11 +9,10 @@ import Foundation
 import UIKit
 
 struct K {
-
     // https://api.themoviedb.org/3/movie/popular?api_key=fb1d7b5f0bd8e62011e556c7da9d9bbd&language=en-US&page=1
     // https://api.themoviedb.org/3/movie/760161?api_key=fb1d7b5f0bd8e62011e556c7da9d9bbd&language=en-US
     // https://api.themoviedb.org/3/movie/718930/credits?api_key=fb1d7b5f0bd8e62011e556c7da9d9bbd
-    
+
     // https://image.tmdb.org/t/p/w500/tVxDe01Zy3kZqaZRNiXFGDICdZk.jpg
     enum API {
         static let URL = "https://api.themoviedb.org/3/movie/"
@@ -25,13 +24,20 @@ struct K {
                                             "language": language,
                                             "page": page]
     }
-    
+
     enum Images {
         static let backgroundImage = UIImage(systemName: "person")
         static let close = UIImage(systemName: "xmark.circle")
+        static let liked = {
+            let image = UIImage(systemName: "hand.thumbsup.fill")
+            image?.withTintColor(.blue)
+            return image
+        }()
+
+        static let like = UIImage(systemName: "hand.thumbsup")
     }
-    
-    enum Font{
+
+    enum Font {
         static let titleFont = UIFont.systemFont(ofSize: 25, weight: .black)
     }
 }

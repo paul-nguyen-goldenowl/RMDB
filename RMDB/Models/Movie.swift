@@ -11,6 +11,11 @@ struct MovieData: Decodable {
     let results: [Movie]
 }
 
+struct MovieWithLike{
+    let movie: Movie
+    var isLike: Bool
+}
+
 struct Movie: Codable {
     let id: Int
     let backdrop: String
