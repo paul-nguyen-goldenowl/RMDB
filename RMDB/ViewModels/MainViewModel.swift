@@ -32,13 +32,12 @@ class MainViewModel {
         })
     }
 
-
-//    func produceCharacterToViewModel(_ vc: UIViewController, character: Character) {
-//        let viewController = DetailViewController()
-//        let detailViewModel = viewController.viewModel
-//        detailViewModel.character = character
-//        let navigationController = UINavigationController(rootViewController: viewController)
-//        navigationController.modalPresentationStyle = .fullScreen
-//        vc.navigationController?.present(navigationController, animated: true)
-//    }
+    func navigateWithMovie(_ vc: UIViewController, movie: Movie){
+        let viewController = DetailViewController()
+        let detailViewModel = viewController.viewModel
+        detailViewModel.movie = movie
+        let navController = UINavigationController(rootViewController: viewController)
+        navController.modalPresentationStyle = .fullScreen
+        vc.navigationController?.present(navController, animated: true)
+    }
 }

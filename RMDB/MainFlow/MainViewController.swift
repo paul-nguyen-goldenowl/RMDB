@@ -80,13 +80,13 @@ class MainViewController: UIViewController {
     private func configureNavigation() {}
     
     private func fetchPopular() {
-        viewModel.fetchPopular(completion: { result in
+        viewModel.fetchPopular(completion: { [weak self] result in
             switch result {
             case .success:
                 print("fetch data success")
-                self.collectionView.reloadData()
+                self?.collectionView.reloadData()
             case let .failure(error):
-                self.showErrorNotification(error: error)
+                self?.showErrorNotification(error: error)
             }
         })
     }
@@ -109,5 +109,9 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         viewModel.movies.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        viewModel.navigateWithMovie(self, movie: viewModel.movies[indexPath.row])
     }
 }

@@ -1,13 +1,12 @@
 //
 //  Movie.swift
 //  RMDB
-/// Users/goldenowl/Documents/macOS.md
 //  Created by Golden Owl on 06/10/2022.
 //
 
 import Foundation
 
-struct MovieData: Decodable{
+struct MovieData: Decodable {
     let page: Int
     let results: [Movie]
 }
@@ -25,6 +24,10 @@ struct Movie: Codable {
         case title
         case overview
         case poster = "poster_path"
+    }
+
+    static func getImageUrl(from path: String) -> String {
+        return K.API.imageUrlBase + path
     }
 
 //    adult    false
